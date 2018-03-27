@@ -1,37 +1,59 @@
 import React, { Component } from 'react';
 import {
-  Platform,
   StyleSheet,
   Text,
   View,
-  Button  
+  Button,
+  FlatList
 } from 'react-native';
+import FeedItem from '../components/FeedItem';
+
 import Styles from '../styles/app';
 
-const instructions = Platform.select({
-  ios: 'Press Cmd+R to reload,\n' +
-    'Cmd+D or shake for dev menu',
-  android: 'Double tap R on your keyboard to reload,\n' +
-    'Shake or press menu button for dev menu',
-});
+// Mock
+const feedMock = require('../assets/mocks/feed.json');
 
 export default class Feed extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      feed: {},
+    };
+  }
+  componentDidMount() {
+    // --> fetch
+    this.setState(prevState => {
+      return { ...prevState, feed: feedMock };
+    });
+  }
+  renderFeed() {
+    const { feed } = this.state;
+    return (
+      <FlatList
+        ref='feedFlatList'
+        data={feed}
+        keyExtractor={item => item.id}
+        renderItem={({ item, index }) => (
+          <FeedItem
+            onPress={() => this.props.navigation.navigate('Detail', {item})}
+            image={{
+              regular: item.urls.regular,
+              thumb: item.urls.thumb,
+            }}
+            author={item.user.username}
+            dimensions={{
+              width: item.width,
+              height: item.height
+            }}
+          />
+        )}
+      />
+    )
+  }
   render() {
     return (
-      <View style={Styles.container}>
-        <Text style={Styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={Styles.instructions}>
-          To get started, edit App.js
-        </Text>
-        <Button
-          title="Go to Details"
-          onPress={() => this.props.navigation.navigate('Detail')}
-        />
-        <Text style={Styles.instructions}>
-          {instructions}
-        </Text>
+      <View>
+        {this.renderFeed()}
       </View>
     );
   }

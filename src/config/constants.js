@@ -1,0 +1,3 @@
+export const FEED_ITEM_BASE_HEIGHT = 300;
+export const FEED_ITEM_FADE_DURATION = 250;
+export const FEED_ITEM_BLUR_THUMBNAIL = 8;

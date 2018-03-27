@@ -11,7 +11,7 @@ const defaultHeaderConfig = {
     borderBottomWidth: 0,
   },
   headerTransparent: true,
-  headerTintColor: COLORS.PRIMARY,
+  headerTintColor: COLORS.WHITE,
 };
 
 export default StackNavigator(

@@ -1,3 +1,3 @@
 export const COLORS = {
-  PRIMARY: '#ffffff',
+  WHITE: 'rgba(245, 246, 250, 1)',
 };
