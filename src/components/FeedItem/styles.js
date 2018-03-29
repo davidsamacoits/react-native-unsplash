@@ -8,9 +8,17 @@ export default StyleSheet.create({
   },
   image: {
     width: '100%',
-    position: 'absolute',
   },
   thumbnail: {
     width: '100%',    
+  },
+  thumbnailContainer: {
+    width: '100%',
+    position: 'absolute',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  activityIndicatorThumbnail: {
+    position: 'absolute',
   },
 });

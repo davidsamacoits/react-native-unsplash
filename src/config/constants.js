@@ -1,3 +1,10 @@
-export const FEED_ITEM_BASE_HEIGHT = 300;
+export const FEED_ITEM_BASE_HEIGHT = 250;
 export const FEED_ITEM_FADE_DURATION = 250;
 export const FEED_ITEM_BLUR_THUMBNAIL = 8;
+
+export const DETAIL_FADE_DURATION = 250;
+export const DETAIL_BLUR_THUMBNAIL = 8;
+
+export const TOUCHABLE_ACTIVE_OPACITY = 0.85
+
+export const LOADING_DEFAULT_DELAY = 1000;

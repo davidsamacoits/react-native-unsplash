@@ -3,20 +3,26 @@ import {
 } from 'react-native';
 
 export default StyleSheet.create({
-  container: {
+  detailContainer: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
     backgroundColor: '#F5FCFF',
   },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
+  detailFullImage: {
+    width: '100%',
+    height: '100%',
   },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
+  detailThumbnailContainer: {
+    width: '100%',
+    height: '100%',
+    position: 'absolute',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  detailThumbnail: {
+    width: '100%',
+    height: '100%', 
+  },
+  activityIndicatorThumbnail: {
+    position: 'absolute',
   },
 });
